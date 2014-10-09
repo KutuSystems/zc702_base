@@ -20,20 +20,7 @@ if {[string equal [get_filesets sources_1] ""]} {
 }
 
 # Add files to 'sources_1' fileset
-set obj [get_filesets sources_1]
-set files [list \
- "[file normalize "$orig_proj_dir/sources/sources_1/top_zc702/top_zc702.vhd"]"\
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-# None
-
-# Set 'sources_1' fileset file properties for local files
-set file "top_zc702/top_zc702.vhd"
-set file_obj [get_files -of_objects sources_1 [list "*$file"]]
-set_property "file_type" "VHDL" $file_obj
-
+add_files -norecurse sources/sources_1/top_zc702/top_zc702.vhd
 
 # Set 'sources_1' fileset properties
 set obj [get_filesets sources_1]
@@ -45,20 +32,7 @@ if {[string equal [get_filesets constrs_1] ""]} {
 }
 
 # Add files to 'constrs_1' fileset
-set obj [get_filesets constrs_1]
-set files [list \
- "[file normalize "$orig_proj_dir/sources/constrs_1/system_top_zc702.xdc"]"\
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'constrs_1' fileset file properties for remote files
-# None
-
-# Set 'constrs_1' fileset file properties for local files
-set file "constrs_1/system_top_zc702.xdc"
-set file_obj [get_files -of_objects constrs_1 [list "*$file"]]
-set_property "file_type" "XDC" $file_obj
-
+add_files -norecurse sources/constrs_1/system_top_zc702.xdc
 
 # Set 'constrs_1' fileset properties
 set obj [get_filesets constrs_1]
